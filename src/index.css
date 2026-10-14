@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-main: #0A0A0A;
+  --color-surface-card: #111311;
+  --color-surface-subtle: #161916;
+  --color-surface-active: #1D221D;
+  --color-border-base: #222622;
+  --color-border-highlight: #343C34;
+  --color-lime-accent: #C6FF4D;
+  --color-lime-dim: #9ecb3d;
+  --color-text-primary: #F5F5F0;
+  --color-text-muted: #9CA3AF;
+  --color-text-dim: #6B7280;
+
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-heading: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", Consolas, "Courier New", monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+    background-color: #0A0A0A;
+    color: #F5F5F0;
+    font-family: var(--font-sans);
+  }
+
+  body {
+    background-color: #0A0A0A;
+    color: #F5F5F0;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.025em;
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+  }
+
+  /* Custom subtle scrollbar */
+  ::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0A0A0A;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #222622;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #343C34;
+  }
+}
+
+/* Background grid patterns */
+.bg-grid-tech {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+}
+
+.bg-dot-matrix {
+  background-image: radial-gradient(rgba(198, 255, 77, 0.12) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Glow effects */
+.glow-lime-sm {
+  box-shadow: 0 0 15px -3px rgba(198, 255, 77, 0.15);
+}
+
+.glow-lime-md {
+  box-shadow: 0 0 30px -5px rgba(198, 255, 77, 0.22);
+}
+
+.glow-lime-subtle {
+  box-shadow: 0 0 40px -10px rgba(198, 255, 77, 0.08);
+}
+
+/* Glass & Card styles */
+.tech-card {
+  background: #111311;
+  border: 1px solid #222622;
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tech-card:hover {
+  border-color: #384238;
+}
+
+/* Smooth Focus states */
+:focus-visible {
+  outline: 2px solid #C6FF4D;
+  outline-offset: 2px;
+}
